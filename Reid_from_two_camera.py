@@ -422,3 +422,4 @@ for i, pedestrian_location in enumerate(Pedestrian_location):
 # track_location.to_csv("Location of Pedestrian track.csv")
 #location_log.to_csv("Track of Pedestrian perspective image.csv")
 print("Everything goes well")
+print("github is ok")
