@@ -362,7 +362,7 @@ while True:
 cap1.release()
 cap2.release()
 cv.destroyAllWindows()
-print("dsf")
+
 #print("the frame in video is:{}".format(frame_number))
 # 追踪到的行人轨迹的位置坐标保存
 track_location = pd.DataFrame(Pedestrian_location)
