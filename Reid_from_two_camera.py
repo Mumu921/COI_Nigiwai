@@ -233,8 +233,8 @@ for i in range(track_number):
 
 # cap1 = cv.VideoCapture("C:/image/video/COI-video/20210928/mov_area1_2021-09-10_14-00-01_600_2.mp4")  # 视频文件读入
 # cap2 = cv.VideoCapture("C:/image/video/COI-video/20210928/mov_area1_2021-09-10_14-00-01_600.mp4")  # 视频文件读入
-cap1 = cv.VideoCapture("C:/image/video/2.mp4")  # 视频文件读入
-cap2 = cv.VideoCapture("C:/image/video/vibration.mp4")  # 视频文件读入
+cap1 = cv.VideoCapture("C:/image/video/20210928/mov_area1_2021-09-10_14-00-01_600.mp4")  # 视频文件读入
+cap2 = cv.VideoCapture("C:/image/video/20210928/mov_area1_2021-09-10_14-00-01_600_2.mp4")  # 视频文件读入
 print(cap1.isOpened())
 print(cap2.isOpened())
 width = int(cap1.get(cv.CAP_PROP_FRAME_WIDTH))
@@ -416,10 +416,10 @@ for i, pedestrian_location in enumerate(Pedestrian_location):
     location = pedestrian_location
 
     for j, coordinate in enumerate(location):
-        location_log = location_log.append([{"ID":i, "X":coordinate[0], "Y":coordinate[1], "Camera_index":coordinate[2], "Confidence":coordinate[3]}])
+        location_log = location_log.append([{"ID":i, "X":coordinate[0], "Y":coordinate[1], "Confidence":coordinate[2], "Camera_index":coordinate[3]}])
 
 
 # track_location.to_csv("Location of Pedestrian track.csv")
-#location_log.to_csv("Track of Pedestrian perspective image.csv")
+# location_log.to_csv("Track of Pedestrian.csv")
 print("Everything goes well")
-print("github is ok")
+#print("github is ok")

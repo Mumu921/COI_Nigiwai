@@ -5,10 +5,8 @@ import time
 import cv2.cv2 as cv
 import pandas as pd
 #
-# cap1 = cv.VideoCapture("C:/image/video/COI-video/20210928/mov_area1_2021-09-10_14-00-01_600_2.mp4")
-# cap2 = cv.VideoCapture("C:/image/video/COI-video/20210928/mov_area1_2021-09-10_14-00-01_600.mp4")
-cap1 = cv.VideoCapture("C:/image/video/2.mp4")  # 视频文件读入
-cap2 = cv.VideoCapture("C:/image/video/vibration.mp4")  # 视频文件读入
+cap1 = cv.VideoCapture("C:/image/video/20210928/mov_area1_2021-09-10_14-00-01_600.mp4")  # 视频文件读入
+cap2 = cv.VideoCapture("C:/image/video/20210928/mov_area1_2021-09-10_14-00-01_600_2.mp4")  # 视频文件读入
 # 查看视频是否读取成功
 print(cap1.isOpened())
 print(cap2.isOpened())
@@ -25,14 +23,16 @@ while True:
     print("the size of frame1:{}".format(frame1.shape))
     frame2 = cv.resize(frame2, (width//1, height//1))
     print("the size of frame2:{}".format(frame2.shape))
-    img = np.hstack((frame1, frame2))
-    print("the size of img:{}".format(img.shape))
-    img = cv.line(img, (1920,0), (3840,1088), (0, 255, 0), 10)
-    img = cv.line(img, (0, 0), (1920, 544), (0, 0, 255), 10)
-    img = cv.line(img, (0, 0), (1920, 1088), (0, 0, 255), 10)
+    # img = np.hstack((frame1, frame2))
+    # print("the size of img:{}".format(img.shape))
+    frame1 = cv.line(frame1, (300, 1088), (1350, 450), (0, 255, 0), 2)
+    frame1 = cv.line(frame1, (500, 1088), (1550, 450), (0, 255, 0), 2)
+    frame2 = cv.line(frame2, (550, 650), (1100, 1088), (0, 0, 255), 2)
+    frame2 = cv.line(frame2, (750, 650), (1350, 1088), (0, 0, 255), 2)
+    # img = cv.line(img, (0, 0), (1920, 1088), (0, 0, 255), 10)
     cv.namedWindow('cap1', cv.WINDOW_NORMAL)
-    cv.imshow("cap1", img)
-    # cv.namedWindow('cap2', cv.WINDOW_NORMAL)
+    cv.imshow("cap1", frame1)
+    cv.namedWindow('cap2', cv.WINDOW_NORMAL)
     cv.imshow("cap2", frame2)
     c = cv.waitKey(50)
     if c == 27:
